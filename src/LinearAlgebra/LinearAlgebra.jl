@@ -1,1 +1,1 @@
-include("gaussian_elimination.jl")
+include("GaussianElimination.jl")
