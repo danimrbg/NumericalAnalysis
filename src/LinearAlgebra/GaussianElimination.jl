@@ -18,11 +18,11 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
     Aext = [copy(A) copy(b)]
     n = length(b)
 
-    for i = 1:n - 1
+    for i = 1:n-1
         p = i
         msg_erro = false
 
-        for k = i:n 
+        for k = i:n
             if round(Aext[k, i], digits = n_digits) != 0
                 p = k
                 break
@@ -46,7 +46,7 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
             Aext[i, :] = v
         end
 
-        for j = i + 1:n
+        for j = i+1:n
             m = Aext[j, i] / Aext[i, i]
             Aext[j, :] = Aext[j, :] - m * Aext[i, :]
         end
@@ -58,14 +58,14 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
     end
 
     x = Vector{Float64}(undef, n)
-    x[n] = Aext[n, n + 1] / Aext[n, n]
-    
-    for i = n - 1:-1:1
+    x[n] = Aext[n, n+1] / Aext[n, n]
+
+    for i = n-1:-1:1
         sum = 0
-        for j = i + 1:n
+        for j = i+1:n
             sum += Aext[i, j] * x[j]
         end
-        x[i] = (Aext[i, n + 1] - sum) / Aext[i, i]
+        x[i] = (Aext[i, n+1] - sum) / Aext[i, i]
     end
 
     return x
