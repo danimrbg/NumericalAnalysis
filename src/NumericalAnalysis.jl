@@ -10,6 +10,8 @@ export round_sum,
     relative_error,
     approximated_value_interval_given_relative_error,
     solve_system,
+    solve_system_with_scaled_partial_pivoting,
+    inverse_matrix,
     bisection,
     fixed_point,
     newton,
@@ -18,5 +20,4 @@ export round_sum,
     steffensen,
     horner_method,
     solve_integral
-
 end

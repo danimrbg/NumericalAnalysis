@@ -13,7 +13,7 @@ end
 function solve_system(A::Matrix{Float64}, b::Vector{Float64})
     dimension_failure(A, b) && return
 
-    n_digits = 8
+    n_digits = 4
 
     Aext = [copy(A) copy(b)]
     n = length(b)
@@ -37,8 +37,6 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
             println("Sistema não admite única solução.")
             return
         end
-
-        a_pi = Aext[p, i]
 
         if p != i
             v = copy(Aext[p, :])

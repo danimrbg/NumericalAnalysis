@@ -1,4 +1,4 @@
-@testset "Test Solve System" begin
+@testset "Test GaussianElimination solve_system" begin
 
     atol = 1e-10
 

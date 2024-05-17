@@ -1,4 +1,4 @@
-@testset "Test absolute_error" begin
+@testset "Test RoundOffErrors absolute_error" begin
 
     atol = 1e-15
 
@@ -15,7 +15,7 @@
     @test absolute_error(value, approximated_value) ≈ 7.346410206832132e-6 atol = atol
 end
 
-@testset "Test relative_error" begin
+@testset "Test RoundOffErrors relative_error" begin
 
     atol = 1e-15
 
@@ -36,7 +36,7 @@ end
     @test relative_error(value, approximated_value) ≈ 0.00415765262287991 atol = atol
 end
 
-@testset "Test approximated_value_interval_given_relative_error" begin
+@testset "Test RoundOffErrors approximated_value_interval_given_relative_error" begin
 
     atol = 1e-8
 

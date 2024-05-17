@@ -1,4 +1,4 @@
-@testset "Test Round Arithmetics" begin
+@testset "Test RoundArithmetics" begin
 
     #Exercise 1_6
     atol = 1e-8
