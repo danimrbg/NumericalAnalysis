@@ -18,5 +18,5 @@
     b = [59.17; 46.78]
     x = [10.0; 1.0]
     x_calc = solve_system_with_scaled_partial_pivoting(A, b)
-    @test norm(x - x_calc, Inf) ≈ atol = atol
+    @test norm(x - x_calc, Inf) ≈ 0 atol = atol
 end
