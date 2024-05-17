@@ -13,7 +13,7 @@ end
 function solve_system(A::Matrix{Float64}, b::Vector{Float64})
     dimension_failure(A, b) && return
 
-    n_digits = 4
+    n_digits = 8
 
     Aext = [copy(A) copy(b)]
     n = length(b)
