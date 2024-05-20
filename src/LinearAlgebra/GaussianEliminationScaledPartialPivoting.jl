@@ -26,7 +26,7 @@ function solve_system_with_scaled_partial_pivoting(A::Matrix{Float64}, b::Vector
         end
 
         if msg_erro
-            println("Sistema não admite única solução.")
+            println("A matriz é singular.")
             return
         end
 
@@ -49,7 +49,7 @@ function solve_system_with_scaled_partial_pivoting(A::Matrix{Float64}, b::Vector
     end
 
     if round(Aext[n, n], digits = n_digits) == 0
-        println("Sistema não admite única solução.")
+        println("A matriz é singular.")
         return
     end
 

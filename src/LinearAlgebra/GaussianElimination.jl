@@ -1,10 +1,10 @@
 function dimension_failure(A::Matrix{Float64}, b::Vector{Float64})
     if length(b) != size(A)[1]
-        println("O tamanho da matriz A e do vetor b são imcompatíveis.")
+        println("O tamanho da matriz e do vetor são imcompatíveis.")
         return true
     end
     if size(A)[1] != size(A)[2]
-        println("A matriz A precisa ser quadrada.")
+        println("A matriz precisa ser quadrada.")
         return true
     end
     return false
@@ -34,7 +34,7 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
         end
 
         if msg_erro
-            println("Sistema não admite única solução.")
+            println("A matriz é singular.")
             return
         end
 
@@ -51,7 +51,7 @@ function solve_system(A::Matrix{Float64}, b::Vector{Float64})
     end
 
     if round(Aext[n, n], digits = n_digits) == 0
-        println("Sistema não admite única solução.")
+        println("A matriz é singular.")
         return
     end
 

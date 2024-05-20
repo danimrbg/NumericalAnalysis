@@ -11,7 +11,6 @@ function inverse_matrix(A::Matrix{Float64})
     for j = 1:n
         b = 1.0 * I[1:n,j]
         if isnothing(solve_system_with_scaled_partial_pivoting(A, b))
-            println("A matriz é singular.")
             return
         end
         B[:,j] = solve_system_with_scaled_partial_pivoting(A, b)
