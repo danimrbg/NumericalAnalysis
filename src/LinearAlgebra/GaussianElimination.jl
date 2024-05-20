@@ -1,6 +1,6 @@
 function dimension_failure(A::Matrix{Float64}, b::Vector{Float64})
     if length(b) != size(A)[1]
-        println("O tamanho da matriz e do vetor são imcompatíveis.")
+        println("O tamanho da matriz e do vetor são incompatíveis.")
         return true
     end
     if size(A)[1] != size(A)[2]
